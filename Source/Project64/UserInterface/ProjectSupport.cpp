@@ -78,7 +78,7 @@ bool CProjectSupport::ValidateCode(const char * Code)
             m_SupportInfo.Validated = true;
             SaveSupportInfo();
         }
-    } 
+    }
     return m_SupportInfo.Validated;
 }
 
@@ -123,14 +123,7 @@ void CProjectSupport::IncrementRunCount()
 
 bool CProjectSupport::ShowSuppotWindow()
 {
-    time_t now = time(nullptr);
-    if (m_SupportInfo.LastShown <= now && ((now - m_SupportInfo.LastShown) / 60) < 60)
-    {
-        return false;
-    }
-    m_SupportInfo.LastShown = now;
-    SaveSupportInfo();
-    return true;
+    return false;
 }
 
 bool CProjectSupport::PerformRequest(const wchar_t * Url, const std::string & PostData, DWORD & StatusCode, std::vector<std::string> & Headers)
